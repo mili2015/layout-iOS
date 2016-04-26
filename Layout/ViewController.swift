@@ -25,7 +25,8 @@ class ViewController: UIViewController {
         let screenWidth = screenSize.width
         let screenHeight = screenSize.height
         
-        print("screenWidth: \(screenWidth) screenHeight: \(screenHeight)")
+        print("screenWidth: \(screenWidth) screenHeight: \(screenHeight) ok")
+        //comment
     }
     
     
