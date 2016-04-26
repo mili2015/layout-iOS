@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         let screenHeight = screenSize.height
         
         print("screenWidth: \(screenWidth) screenHeight: \(screenHeight) ok")
-        //comment
+        //comment, more an comment
     }
     
     
