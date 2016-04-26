@@ -16,8 +16,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+       /* var viewController: UIViewController?
+        if(Utils.isIpad())
+        {
+            viewController = TabletViewController()
+        }
+        else
+        {
+            viewController = ViewController()
+        }
+        
+        self.window?.rootViewController = viewController*/
+        
+        
         return true
     }
+    
+    /*func application(application: UIApplication, supportedInterfaceOrientationsForWindow window: UIWindow?) -> UIInterfaceOrientationMask {
+        return checkOrientation(self.window?.rootViewController)
+    }*/
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -39,6 +57,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func checkOrientation(viewController:UIViewController?)-> UIInterfaceOrientationMask{
+        
+        if(viewController == nil){
+            
+            return UIInterfaceOrientationMask.All //All means all orientation
+            
+        }else if (viewController is ViewController){
+            
+            return UIInterfaceOrientationMask.Portrait//This is sign in view controller that i only want to set this to portrait mode only
+            
+        }else{
+            
+            return checkOrientation(viewController!.presentedViewController)
+        }
     }
 
 
